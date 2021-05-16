@@ -207,13 +207,13 @@ export class HardhatNode extends EventEmitter {
     common: Common,
     remoteChainId: number
   ): void {
-    if (!common.gteHardfork("spuriousDragon")) {
-      throw new InternalError(
-        `Invalid hardfork selected in Hardhat Network's config.
+//     if (!common.gteHardfork("spuriousDragon")) {
+//       throw new InternalError(
+//         `Invalid hardfork selected in Hardhat Network's config.
 
-The hardfork must be at least spuriousDragon, but ${common.hardfork()} was given.`
-      );
-    }
+// The hardfork must be at least spuriousDragon, but ${common.hardfork()} was given.`
+//       );
+//     }
 
     if (forkBlockNumber !== undefined) {
       let upstreamCommon: Common;
@@ -228,13 +228,13 @@ The hardfork must be at least spuriousDragon, but ${common.hardfork()} was given
 
       upstreamCommon.setHardforkByBlockNumber(forkBlockNumber);
 
-      if (!upstreamCommon.gteHardfork("spuriousDragon")) {
-        throw new InternalError(
-          `Cannot fork ${upstreamCommon.chainName()} from block ${forkBlockNumber}.
+//       if (!upstreamCommon.gteHardfork("spuriousDragon")) {
+//         throw new InternalError(
+//           `Cannot fork ${upstreamCommon.chainName()} from block ${forkBlockNumber}.
 
-Hardhat Network's forking functionality only works with blocks from at least spuriousDragon.`
-        );
-      }
+// Hardhat Network's forking functionality only works with blocks from at least spuriousDragon.`
+//         );
+//       }
     }
   }
 
